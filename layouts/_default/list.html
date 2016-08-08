@@ -1,0 +1,17 @@
+{{ partial "head.html" . }}
+<div class="content container dari_list_html">
+  <ul class="posts">
+  {{ range .Data.Pages }}
+    <li>
+    <time>{{ .Date.Format "Jan 2, 2006" }}</time> &middot;
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ if isset .Params "categories" }}
+    &middot;
+    {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+
+    {{ end }}
+</li>
+  {{ end }}
+  </ul>
+</div>
+{{ partial "foot.html" . }}

@@ -1,0 +1,22 @@
+baseurl = "http://ardhyw.io/"
+languageCode = "en-us"
+title = "Qoyyidul 'ilma bil-kitaabi"
+theme = "hyde-w"
+buildDrafts = true
+paginate = 10
+
+[author]
+name="ardhyw"
+
+#[permalinks]
+#post = "/blog/:year/:month/:day/:title/"
+
+[taxonomies]
+category = "categories"
+
+[params]
+theme = "theme-base-0d"
+highlight = "monokai-sublime"
+#defaultDescription = "Noted!"
+#defaultKeywords = ""
+tagline = "CATATAN"
