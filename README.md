@@ -1,6 +1,6 @@
-#HYDE-W
+#Hyde-X
 
-My modification of Hyde-X theme
+A modification of [Hyde-X](https://github.com/zyro/hyde-x) theme.
 
 Hyde-X
 ======
