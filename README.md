@@ -1,4 +1,4 @@
-#Hyde-X
+#Hyde-W
 
 A modification of [Hyde-X](https://github.com/zyro/hyde-x) theme.
 
