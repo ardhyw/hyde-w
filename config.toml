@@ -1,22 +1,24 @@
-baseurl = "http://ardhyw.io/"
+baseurl = "http://ardhyw.github.io/"
 languageCode = "en-us"
-title = "Qoyyidul 'ilma bil-kitaabi"
+title = "Catatan"
 theme = "hyde-w"
 buildDrafts = true
 paginate = 10
 
 [author]
-name="ardhyw"
+    name="ardhyw"
 
 #[permalinks]
 #post = "/blog/:year/:month/:day/:title/"
 
 [taxonomies]
-category = "categories"
+    category = "categories"
+    tag = "tags"
 
 [params]
-theme = "theme-base-0d"
-highlight = "monokai-sublime"
-#defaultDescription = "Noted!"
-#defaultKeywords = ""
-tagline = "CATATAN"
+    theme = "theme-base-00"
+    highlight = "monokai-sublime"
+    #defaultDescription = "Noted!"
+    #defaultKeywords = ""
+    #tagline = "CATATAN"
+    dateformat = "2006-01-02"

@@ -1,34 +1,15 @@
 {{ partial "head.html" . }}
 <div class="content container">
-  <div class="posts">
-    <ul class="posts">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-    {{ range $paginator.Pages }}
-    <li class="posts">
-      <p><strong><time>{{ .Date.Format "Jan 2, 2006" }}</time> &middot;
-      {{if .Draft}}[draft]{{end}}
-      <a href="{{ .Permalink }}">{{ .Title }}</a></strong></p>
-      {{ if .Description }}
-      <p>{{ .Description }}</p>
-      {{else}}
-      {{.Summary}}
-      {{ end }}
+  <ul class="posts">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "post" )  }}
+      {{ range $paginator.Pages }}
+    <li>
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ if .Description }} &middot; {{ .Description }} {{ end }}
     </li>
-    {{ end }}
-    </ul>
-    {{ template "_internal/pagination.html" . }}
-  </div>
-</div>
+  {{ end }}
+  </ul>
 
-{{ with .Site.DisqusShortname }}
-<script type="text/javascript">
-var disqus_shortname = {{ . }};
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-{{ end }}
+  {{ template "_internal/pagination.html" . }}
+</div>
 {{ partial "foot.html" . }}

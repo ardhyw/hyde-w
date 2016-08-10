@@ -12,13 +12,14 @@
 
     </ul>
 
-    <ul class="sidebar-nav">
-
-      {{ range $taxonomyName, $taxonomy := .Site.Taxonomies.categories }}
-      <li><a href="/categories/{{$taxonomyName|urlize}}">{{ title $taxonomyName }}</a></li>
-      {{ end }}
-
-    </ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+        <div>
+            {{ $taxonomyname | humanize }}<br/>
+            {{ range $key, $val := $taxonomy }}
+            <a class="label" href="/{{$taxonomyname}}/{{$key}}">{{ $key | humanize }}</a>
+            {{ end }}
+        </div>
+    {{ end }}
 
     <ul class="sidebar-nav">
       <li class="sidebar-nav-item">

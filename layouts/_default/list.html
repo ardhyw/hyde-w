@@ -1,16 +1,12 @@
 {{ partial "head.html" . }}
-<div class="content container dari_list_html">
+<div class="content container">
   <ul class="posts">
-  {{ range .Data.Pages }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "post" )  }}
+      {{ range $paginator.Pages }}
     <li>
-    <time>{{ .Date.Format "Jan 2, 2006" }}</time> &middot;
-	<a href="{{ .Permalink }}">{{ .Title }}</a>
-{{ if isset .Params "categories" }}
-    &middot;
-    {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-
-    {{ end }}
-</li>
+        <time>{{ .Date.Format .Site.Params.dateformat }}</time> /
+	    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
   {{ end }}
   </ul>
 </div>
